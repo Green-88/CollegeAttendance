@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> College Attendance </title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h2> College Attendance </h2>
+
+  <!-- Login Form -->
+  <div id="loginForm">
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+  </div>
+
+  <!-- Attendance Section -->
+  <div id="attendanceSection" style="display:none;">
+    <button class="logout-btn" onclick="logout()">Logout</button>
+    <input type="text" id="search" placeholder="Search student..." oninput="filterStudents()">
+    <table>
+      <thead>
+        <tr>
+          <th>Student</th>
+          <th>Status</th>
+          <th>Action</th>
+          <th>View</th>
+          <th>Total Present</th>
+          <th>Total Absent</th>
+        </tr>
+      </thead>
+      <tbody id="studentTable"></tbody>
+    </table>
+    <div id="studentDetail">Click "View" button of any student to see their calendar.</div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

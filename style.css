@@ -1,0 +1,256 @@
+/* === General Page Styling === */
+body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background: linear-gradient(to right, #f8f9fa, #e9ecef);
+    margin: 0; 
+    padding: 0; 
+    color: #333;
+}
+
+.container { 
+    max-width: 1200px; 
+    margin: 40px auto; 
+    padding: 25px; 
+    background: #ffffff; 
+    border-radius: 12px; 
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1); 
+}
+
+h2 { 
+    text-align: center; 
+    color: #2e7d32; 
+    margin-bottom: 20px; 
+    font-size: 28px;
+}
+
+/* === Login Form === */
+#loginForm, #attendanceSection { 
+    max-width: 500px; 
+    margin: 0 auto; 
+}
+
+#loginForm input { 
+    width: 100%; 
+    padding: 12px; 
+    margin: 10px 0; 
+    border-radius: 8px; 
+    border: 1px solid #ccc; 
+    font-size: 16px; 
+    transition: border 0.3s;
+}
+
+#loginForm input:focus {
+    outline: none;
+    border: 1px solid #2e7d32;
+    box-shadow: 0 0 6px rgba(46,125,50,0.3);
+}
+
+#loginForm button { 
+    width: 100%; 
+    padding: 12px; 
+    border: none; 
+    border-radius: 8px; 
+    background: #2e7d32; 
+    color: #fff; 
+    font-weight: bold; 
+    font-size: 16px;
+    cursor: pointer; 
+    transition: background 0.3s, transform 0.2s;
+}
+
+#loginForm button:hover { 
+    background: #1b5e20; 
+    transform: translateY(-2px);
+}
+
+/* === Search Bar === */
+#search { 
+    width: 100%; 
+    padding: 10px 14px; 
+    margin: 15px 0; 
+    border-radius: 8px; 
+    border: 1px solid #ccc; 
+    font-size: 16px; 
+    transition: border 0.3s;
+}
+
+#search:focus {
+    outline: none;
+    border: 1px solid #2e7d32;
+    box-shadow: 0 0 6px rgba(46,125,50,0.3);
+}
+
+/* === Table Styling === */
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-top: 10px; 
+    font-size: 15px;
+}
+
+th, td { 
+    border: 1px solid #ddd; 
+    padding: 12px; 
+    text-align: center; 
+}
+
+th { 
+    background: #2e7d32; 
+    color: white; 
+    font-size: 16px;
+}
+
+tr:nth-child(even) { background: #f9f9f9; }
+
+/* === Buttons === */
+button { 
+    cursor: pointer; 
+    border: none; 
+    border-radius: 6px; 
+    padding: 8px 14px; 
+    margin: 2px; 
+    font-weight: bold; 
+    font-size: 14px;
+    transition: transform 0.15s, background 0.3s;
+}
+
+button:hover { transform: scale(1.05); }
+
+.present-btn { background: #388e3c; color: #fff; }
+.present-btn:hover { background: #2e7d32; }
+
+.absent-btn { background: #d32f2f; color: #fff; }
+.absent-btn:hover { background: #b71c1c; }
+
+.view-btn { background: #1976d2; color: #fff; }
+.view-btn:hover { background: #0d47a1; }
+
+.logout-btn { background:#d32f2f; color:#fff; padding:8px 14px; }
+.logout-btn:hover {background:#b71c1c;}
+
+/* === Status Styling === */
+.status.present { 
+    background: linear-gradient(135deg, #81c784, #388e3c); 
+    color: #fff; 
+    font-weight: bold; 
+    border-radius: 6px; 
+    padding: 4px 8px;
+}
+
+.status.absent { 
+    background: linear-gradient(135deg, #e57373, #d32f2f); 
+    color: #fff; 
+    font-weight: bold; 
+    border-radius: 6px; 
+    padding: 4px 8px;
+}
+
+.status.holiday { 
+    background: linear-gradient(135deg, #ffb74d, #f57c00); 
+    color: #fff; 
+    font-weight: bold; 
+    border-radius: 6px; 
+    padding: 4px 8px;
+}
+
+/* === Calendar Styling === */
+.calendar { 
+    display: grid; 
+    grid-template-columns: repeat(7, 1fr); 
+    gap: 5px; 
+    margin-top: 15px; 
+}
+
+.day { 
+    border-radius: 6px; 
+    min-height: 70px; 
+    font-size: 14px; 
+    font-weight: bold; 
+    color: #fff; 
+    position: relative; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column; 
+    transition: transform 0.2s, box-shadow 0.2s; 
+}
+
+.day.present { background: linear-gradient(135deg, #81c784, #388e3c); }
+.day.absent { background: linear-gradient(135deg, #e57373, #d32f2f); }
+.day.holiday { background: linear-gradient(135deg, #ffb74d, #f57c00); }
+.day.empty { background: #f1f1f1; color: #000; font-weight: normal; }
+.day.today { border: 2px solid #ff9800; }
+
+.day:hover { 
+    transform: translateY(-3px); 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
+    cursor: pointer; 
+}
+
+.day:hover::after { 
+    content: attr(data-date); 
+    position: absolute; 
+    top: -25px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    background: rgba(0,0,0,0.75); 
+    color: #fff; 
+    font-size: 12px; 
+    padding: 2px 6px; 
+    border-radius: 4px; 
+    white-space: nowrap; 
+}
+
+/* === Calendar Navigation === */
+.month-nav { 
+    margin: 12px 0; 
+    display: flex; 
+    justify-content: space-between; 
+}
+
+.month-nav button {
+    background: #2e7d32;
+    color: #fff;
+    border-radius: 6px;
+    padding: 6px 12px;
+}
+.month-nav button:hover {
+    background: #1b5e20;
+}
+
+/* === Student Detail Section === */
+#studentDetail { 
+    text-align: left; 
+    margin-top: 30px; 
+    opacity: 0; 
+    transition: opacity 0.5s; 
+}
+
+#studentDetail.active { opacity: 1; }
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    th { display: none; }
+    td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+    td::before {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        white-space: nowrap;
+        font-weight: bold;
+        color: #555;
+    }
+    td:nth-of-type(1)::before { content: "Student"; }
+    td:nth-of-type(2)::before { content: "Status"; }
+    td:nth-of-type(3)::before { content: "Action"; }
+    td:nth-of-type(4)::before { content: "View"; }
+    td:nth-of-type(5)::before { content: "Total Present"; }
+    td:nth-of-type(6)::before { content: "Total Absent"; }
+}
